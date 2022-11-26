@@ -6,9 +6,9 @@ times and recommend clothings items so they're best dressed for going out.
 
 # Group Members:
 
-Shamal Khan
-Saadia Shahid
-Yan Huang
-Nikola Kalacanovic
-Malaika Chaudhry
+- Shamal Khan
+- Saadia Shahid
+- Yan Huang
+- Nikola Kalacanovic
+- Malaika Chaudhry
 
