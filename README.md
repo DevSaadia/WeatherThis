@@ -1,3 +1,5 @@
+![This is an image](/assets/WeatherThisIcon.png)
+
 # weather_this
 
 WeatherThis is an app developed for a course group project. 
