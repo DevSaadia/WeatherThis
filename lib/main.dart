@@ -73,9 +73,16 @@ class _HomePageState extends State<HomePage> {
                   width: 200,
                   height: 300,
 
-                  child: Image.asset('woman_jacket.PNG'),
+                  //these statements check for the weather and display the correct character clothing
+                  child: (data!.temp!<8)?
+                  Image.asset('woman_jacket.PNG'): 
+                  (data!.temp!>15 && data!.temp!<8)? 
+                  Image.asset('woman_sweater.PNG'):
+                      Image.asset('woman_shorts.PNG')
+                  ,
 
                 ),
+
 
                    const SizedBox(height:  60.0,),
                    const Text("Additional information",style: TextStyle(fontSize: 24.0, color: Color(0xdd212121),
