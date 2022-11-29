@@ -72,7 +72,8 @@ class _HomePageState extends State<HomePage> {
                  // color: Colors.grey,
                   width: 200,
                   height: 300,
-                  child: Image.asset('standing_test.png'),
+
+                  child: Image.asset('woman_jacket.PNG'),
 
                 ),
 
