@@ -1,4 +1,6 @@
-![This is an image](/assets/weatherthisbanner.png)
+
+![weatherthisbanner](https://user-images.githubusercontent.com/75495771/204642571-96ba7b88-7616-4fe4-b4e4-b104e0a6d956.png)
+
 
 # weather_this
 
@@ -8,7 +10,7 @@ times and recommend clothings items so they're best dressed for going out.
 
 # Group Members: 
 
-- Shamal Khan
+- Shamal Khan ok
 - Saadia Shahid
 - Yan Huang
 - Nikola Kalacanovic
