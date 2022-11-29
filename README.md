@@ -10,7 +10,7 @@ times and recommend clothings items so they're best dressed for going out.
 
 # Group Members: 
 
-- Shamal Khan
+- Shamal Khan ok
 - Saadia Shahid
 - Yan Huang
 - Nikola Kalacanovic
