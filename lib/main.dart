@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                       (data!.temp!>15 && data!.temp!<8)?
                       Image.asset('woman_sweater.PNG'):
                       Image.asset('woman_shorts.PNG'),
-                      const SizedBox(height:  30.0,),
+                      const SizedBox(height:  40.0,),
                     ],
                   )
 
