@@ -1,8 +1,9 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-Widget CurrentWeather(IconData icon, String temp, String location) {
+Widget CurrentWeather(IconData icon, String temp, String location, String description) {
 
 
   return Center(
@@ -25,23 +26,34 @@ Widget CurrentWeather(IconData icon, String temp, String location) {
              ),
              Text(
                  "$location",
-                 style: TextStyle(
-                   fontSize: 18.0,
-                   color: Colors.black,
-                 )
+                 style: GoogleFonts.poppins(
+                   textStyle: TextStyle(fontSize: 18.0,),
+                   fontWeight: FontWeight.bold,
+                 ),
              )
            ],
          ),
          Text(
-           "$temp",
-           style: TextStyle(
-               fontSize:  56.0,
+           "$temp°C",
+           style: GoogleFonts.poppins(
+             textStyle:
+            const TextStyle(
+               fontSize:  45.0),
              fontWeight: FontWeight.bold,
 
            ),
          ),
-         SizedBox(height: 10.0,),
+         //SizedBox(height: 40.0,),
+         Text(
+           "$description",
+           style: GoogleFonts.poppins(
+               textStyle: TextStyle(fontSize: 18),
+               fontWeight: FontWeight.w700
+           ),
 
+
+
+         ),
        ],
     ),
   );

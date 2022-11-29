@@ -41,13 +41,14 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: const Color(0xFFE1F4F9),
         elevation: 0.0,
-        title: const Text('Weather this',style: TextStyle(color: Colors.black),),
+        title: const Text('Weather This',style: TextStyle(color: Colors.black),),
         centerTitle: true,
         leading: IconButton(
             onPressed: (){},
             icon: const Icon(Icons.settings), // this shows the hamburger menu
             color:Colors.black
         ),
+
         //TODO: place the 'weatherthis' logo on the top right
       ),
       body: SingleChildScrollView(
@@ -67,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       const SizedBox(height:  30.0,),
-                      CurrentWeather(Icons.wb_sunny_rounded,"${data!.temp?.round()}°","${data!.cityName}"),
+                      CurrentWeather(Icons.wb_sunny_rounded,"${data!.temp?.round()}","${data!.cityName}","${data!.description}"),
                       const SizedBox(height:  60.0,),
                        (data!.temp!<8)?
                       Image.asset('woman_jacket.PNG'):
