@@ -10,7 +10,9 @@ Future<Weather>?getCurrentWeather(String? location) async{
       "https://api.openweathermap.org/data/2.5/weather?q=$location&APPID=6c9c0bfedf33e15625cb913ca1bbe338&units=metric");
   var response= await http.get(endpoint);
   var body=jsonDecode(response.body);
-  print(Weather.fromJson(body).cityName);
+  print("Receiving data for city: ");
+
+  print( Weather.fromJson(body).cityName);
   return  Weather.fromJson(body);
 }
 }
