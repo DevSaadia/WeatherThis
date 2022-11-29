@@ -50,7 +50,9 @@ class _HomePageState extends State<HomePage> {
         ),
         //TODO: place the 'weatherthis' logo on the top right
       ),
-      body: FutureBuilder(
+      body: SingleChildScrollView(
+      child:
+      FutureBuilder(
         future: getData(),
         builder: (context,snapshot){
           if (snapshot.connectionState==ConnectionState.done){
@@ -60,7 +62,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
 
-                CurrentWeather(Icons.wb_sunny_rounded,"${data!.temp}°","${data!.cityName}"),
+                CurrentWeather(Icons.wb_sunny_rounded,"${data!.temp?.round()}°","${data!.cityName}"),
                    const SizedBox(height:  60.0,),
                 Container(
 
@@ -83,15 +85,22 @@ class _HomePageState extends State<HomePage> {
 
                 ),
 
-
                    const SizedBox(height:  60.0,),
-                   const Text("Additional information",style: TextStyle(fontSize: 24.0, color: Color(0xdd212121),
+                   const Text("Current Conditions",style: TextStyle(fontSize: 24.0, color: Color(0xdd212121),
                        fontWeight: FontWeight.bold),
                    ),
                    const Divider(),
                    const SizedBox(height:20.0 ,),
 
                    AdditionalInformation("${data!.wind} km/h", "${data!.humidity}%", "${data!.pressure}%", "${data!.feelsLike}°"),
+                const SizedBox(height:  30.0,),
+                const Text("Hourly Forecast",style: TextStyle(fontSize: 24.0, color: Color(0xdd212121),
+                    fontWeight: FontWeight.bold),
+                ),
+                const Divider(),
+                const SizedBox(height:20.0 ,),
+
+                AdditionalInformation("${data!.wind} km/h", "${data!.humidity}%", "${data!.pressure}%", "${data!.feelsLike}°"),
               ],
                );
             }
@@ -103,7 +112,7 @@ class _HomePageState extends State<HomePage> {
             return Container();
         },
 
-
+      )
       )
     );
   }

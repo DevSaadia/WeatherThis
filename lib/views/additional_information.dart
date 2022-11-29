@@ -10,9 +10,14 @@ Widget AdditionalInformation (
 
     String wind,String humidity, String pressure, String feelsLike){
   return Container(
-    color: Colors.white,
+    decoration: BoxDecoration(
+      borderRadius:  BorderRadius.all(Radius.circular(20)),
+      color: Colors.white,
+    ),
+    //color: Colors.white,
     width: double.infinity,
     padding: const EdgeInsets.all(18.0),
+
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
        crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,7 +42,7 @@ Widget AdditionalInformation (
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-              "$wind",
+                  "$wind",
               style: infoFont,
                   ),
                 const SizedBox(height:18.0),
