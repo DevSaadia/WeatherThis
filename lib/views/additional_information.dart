@@ -52,8 +52,7 @@ Widget AdditionalInformation (
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Humidity",
-                  style: ( titleFont
-                  ),
+                  style: ( titleFont),
                 ),
                 const SizedBox(height:18.0),
                 Text("Feels like",

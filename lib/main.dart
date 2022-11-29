@@ -84,8 +84,7 @@ class _HomePageState extends State<HomePage> {
                    const SizedBox(height:20.0 ,),
 
                    AdditionalInformation("${data!.wind} km/h", "${data!.humidity}%", "${data!.pressure}%", "${data!.feelsLike}°"),
-
-                 ],
+              ],
                );
             }
             else if(snapshot.connectionState==ConnectionState.waiting){
