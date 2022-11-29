@@ -51,37 +51,32 @@ class _HomePageState extends State<HomePage> {
         //TODO: place the 'weatherthis' logo on the top right
       ),
       body: SingleChildScrollView(
-      child:
-      FutureBuilder(
+      child: FutureBuilder(
         future: getData(),
         builder: (context,snapshot){
           if (snapshot.connectionState==ConnectionState.done){
             return Column(
 
-
               crossAxisAlignment: CrossAxisAlignment.center,
+
               children: [
-
-                CurrentWeather(Icons.wb_sunny_rounded,"${data!.temp?.round()}°","${data!.cityName}"),
-                   const SizedBox(height:  60.0,),
                 Container(
-
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                    color: Colors.white,
-                  ),
-
-                 // color: Colors.grey,
-                  width: 200,
-                  height: 300,
-
-                  //these statements check for the weather and display the correct character clothing
-                  child: (data!.temp!<8)?
-                  Image.asset('woman_jacket.PNG'): 
-                  (data!.temp!>15 && data!.temp!<8)? 
-                  Image.asset('woman_sweater.PNG'):
-                      Image.asset('woman_shorts.PNG')
-                  ,
+                  width: 350,
+                 // width: 350,
+                  decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)),color: Colors.white),
+                  child: Column(
+                    children: [
+                      const SizedBox(height:  30.0,),
+                      CurrentWeather(Icons.wb_sunny_rounded,"${data!.temp?.round()}°","${data!.cityName}"),
+                      const SizedBox(height:  60.0,),
+                       (data!.temp!<8)?
+                      Image.asset('woman_jacket.PNG'):
+                      (data!.temp!>15 && data!.temp!<8)?
+                      Image.asset('woman_sweater.PNG'):
+                      Image.asset('woman_shorts.PNG'),
+                      const SizedBox(height:  30.0,),
+                    ],
+                  )
 
                 ),
 
