@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         leading: IconButton(
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Settings()),);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const Settings()),);
             },
             icon: const Icon(Icons.settings), // this shows the hamburger menu
             color:Colors.black

@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);
@@ -7,10 +9,11 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+  String units="CELSIUS";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0x0000),
+        backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text('Settings',style: TextStyle(color: Colors.white),),
         centerTitle: true,
@@ -19,20 +22,16 @@ class _SettingsState extends State<Settings> {
       body:
         SingleChildScrollView(
           child: Container(
-
             width: 350,
             decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15))/*,color: Colors.white*/),
             padding: const EdgeInsets.all(25.0),
-
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
             children:   [
-
               const SizedBox(height:  5.0,),
               const Text ("NAME",style: TextStyle(color: Colors.white),),
               const SizedBox(height: 5),
-
               Container(
                 padding: const EdgeInsets.only(left:10,right: 10),
                 decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: Colors.white),
@@ -65,6 +64,44 @@ class _SettingsState extends State<Settings> {
               const SizedBox(height: 10,),
               const Text("FAHRENHEIT OR CELSIUS",style: TextStyle(color: Colors.white),),
               const SizedBox(height: 5,),
+
+
+              Theme(
+                data: ThemeData(unselectedWidgetColor: Colors.white,), //<-- SEE HERE
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: const Text("FAHRENHEIT (°F)",style: TextStyle(color: Colors.white),),
+                      leading: Radio(
+                        value: "FAHRENHEIT",
+                        groupValue: units,
+                        fillColor:
+                        MaterialStateColor.resolveWith((states) => Colors.green),
+                        onChanged: (value) {
+                          setState(() {
+                            units= value!;
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: const Text("CELSIUS (°C)",style: TextStyle(color: Colors.white),),
+                      leading: Radio(
+                        value: "CELSIUS",
+                        groupValue: units,
+                        fillColor:
+                        MaterialStateColor.resolveWith((states) => Colors.green),
+                        onChanged: ( value) {
+                          setState(() {
+                            units = value!;
+                          });
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
               //ADD RADIO BUTTONS HERE
               const SizedBox(height: 10,),
               const Text("CHARACTER GENDER",style: TextStyle(color: Colors.white),),
