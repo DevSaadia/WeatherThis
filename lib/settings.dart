@@ -62,6 +62,14 @@ class _SettingsState extends State<Settings> {
                 decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: Colors.white),
                 child: const TextField(textAlign: TextAlign.left,),
               ),
+              const SizedBox(height: 10,),
+              const Text("FAHRENHEIT OR CELSIUS",style: TextStyle(color: Colors.white),),
+              const SizedBox(height: 5,),
+              //ADD RADIO BUTTONS HERE
+              const SizedBox(height: 10,),
+              const Text("CHARACTER GENDER",style: TextStyle(color: Colors.white),),
+              const SizedBox(height: 5,),
+            //ADD MALE/FEMALE BUTTONS HERE
             ElevatedButton(onPressed: (){}, child: const Text('CONFIRM')),
             ],
           ),
