@@ -54,11 +54,17 @@ class _HomePageState extends State<HomePage> {
             icon: const Icon(Icons.settings), // this shows the hamburger menu
             color:Colors.black
         ),
-        /*actions: [
-          IconButton(onPressed: *//*something*//*, icon: Icon(Icons.refresh, color: Colors.black,))
+        actions: [
+          IconButton( icon: const Icon(Icons.refresh, color: Colors.black,),onPressed: (){
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()), // this mymainpage is your page to refresh
+                  (Route<dynamic> route) => false,
+            );
+          })
           //change the onPressed from 'getData' to refresh the contents of the screen
           
-        ],*/
+        ],
 
         //TODO: place the 'weatherthis' logo on the top right
       ),

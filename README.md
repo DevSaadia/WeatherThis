@@ -1,9 +1,6 @@
 ![weather this github banner](https://user-images.githubusercontent.com/75495771/204911470-18ca1a0e-ae18-4856-8046-e5c262228241.png)
 
 
-
-
-
 # weather_this
 
 WeatherThis is an app developed for a course group project. 
