@@ -10,6 +10,8 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
   String units="CELSIUS";
+  String gender="female";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +27,7 @@ class _SettingsState extends State<Settings> {
             width: 350,
             decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15))/*,color: Colors.white*/),
             padding: const EdgeInsets.all(25.0),
+
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +46,10 @@ class _SettingsState extends State<Settings> {
               Container(
                 padding: const EdgeInsets.only(left:10,right: 10),
                 decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: Colors.white),
-                child: const TextField(textAlign: TextAlign.left,),
+                child: const TextField(
+                  textAlign: TextAlign.left,
+                  keyboardType: TextInputType.phone,
+                  ),
               ),
               const SizedBox(height: 10,),
               const Text("EMAIL ADDRESS",style: TextStyle(color: Colors.white),),
@@ -51,7 +57,7 @@ class _SettingsState extends State<Settings> {
               Container(
                 padding: const EdgeInsets.only(left:10,right: 10),
                 decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: Colors.white),
-                child: const TextField(textAlign: TextAlign.left,),
+                child: const TextField(textAlign: TextAlign.left,keyboardType: TextInputType.emailAddress,),
               ),
               const SizedBox(height: 10,),
               const Text("LOCATION (CITY)",style: TextStyle(color: Colors.white),),
@@ -65,7 +71,7 @@ class _SettingsState extends State<Settings> {
               const Text("FAHRENHEIT OR CELSIUS",style: TextStyle(color: Colors.white),),
               const SizedBox(height: 5,),
 
-
+              //Units radio buttons
               Theme(
                 data: ThemeData(unselectedWidgetColor: Colors.white,), //<-- SEE HERE
                 child: Column(
@@ -102,7 +108,9 @@ class _SettingsState extends State<Settings> {
                 ),
               ),
 
-              //ADD RADIO BUTTONS HERE
+
+
+              //ADD GENDER RADIO BUTTONS HERE
               const SizedBox(height: 10,),
               const Text("CHARACTER GENDER",style: TextStyle(color: Colors.white),),
               const SizedBox(height: 5,),
