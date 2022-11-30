@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:weather_this/services/weather_api_client.dart';
+import 'package:weather_this/settings.dart';
 import 'package:weather_this/views/additional_information.dart';
 import 'package:weather_this/views/current_weather.dart';
+
 
 import 'model/weather_model.dart';
 
@@ -34,6 +36,8 @@ class _HomePageState extends State<HomePage> {
     data= await client.getCurrentWeather("Toronto");
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -44,10 +48,17 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Weather This',style: TextStyle(color: Colors.black),),
         centerTitle: true,
         leading: IconButton(
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Settings()),);
+            },
             icon: const Icon(Icons.settings), // this shows the hamburger menu
             color:Colors.black
         ),
+        /*actions: [
+          IconButton(onPressed: *//*something*//*, icon: Icon(Icons.refresh, color: Colors.black,))
+          //change the onPressed from 'getData' to refresh the contents of the screen
+          
+        ],*/
 
         //TODO: place the 'weatherthis' logo on the top right
       ),

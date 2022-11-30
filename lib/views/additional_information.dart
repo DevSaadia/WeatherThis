@@ -10,12 +10,12 @@ Widget AdditionalInformation (
     String wind,String humidity, String pressure, String feelsLike
     ) {
   return Container(
-    decoration: BoxDecoration(
+    width:350,
+    decoration: const BoxDecoration(
       borderRadius:  BorderRadius.all(Radius.circular(20)),
       color: Colors.white,
     ),
-    //color: Colors.white,
-    width: double.infinity,
+   // width: double.infinity,
     padding: const EdgeInsets.all(18.0),
 
     child: Column(
