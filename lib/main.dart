@@ -68,27 +68,28 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       const SizedBox(height:  30.0,),
-                      CurrentWeather(Icons.wb_sunny_rounded,"${data!.temp?.round()}","${data!.cityName}","${data!.description}"),
+                      //Text("${data!.temp?.round()}°"),
+                      CurrentWeather("${data!.iconCode}","${data!.temp?.round()}","${data!.cityName}","${data!.description}"),
                       const SizedBox(height:  60.0,),
                        (data!.temp!<8)?
                       Image.asset('woman_jacket.PNG'):
                       (data!.temp!>15 && data!.temp!<8)?
                       Image.asset('woman_sweater.PNG'):
                       Image.asset('woman_shorts.PNG'),
+
                       const SizedBox(height:  40.0,),
                     ],
                   )
-
                 ),
 
-                   const SizedBox(height:  60.0,),
+                   const SizedBox(height:  30.0,),
                    const Text("Current Conditions",style: TextStyle(fontSize: 24.0, color: Color(0xdd212121),
                        fontWeight: FontWeight.bold),
                    ),
                    const Divider(),
                    const SizedBox(height:20.0 ,),
 
-                   AdditionalInformation("${data!.wind} km/h", "${data!.humidity}%", "${data!.pressure}%", "${data!.feelsLike}°"),
+                   AdditionalInformation("${data!.wind} km/h", "${data!.humidity}%", "${data!.pressure}%", "${data!.feelsLike?.round()}"),
                 const SizedBox(height:  30.0,),
                 const Text("Hourly Forecast",style: TextStyle(fontSize: 24.0, color: Color(0xdd212121),
                     fontWeight: FontWeight.bold),
@@ -96,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                 const Divider(),
                 const SizedBox(height:20.0 ,),
 
-                AdditionalInformation("${data!.wind} km/h", "${data!.humidity}%", "${data!.pressure}%", "${data!.feelsLike}°"),
+                AdditionalInformation("${data!.wind} km/h", "${data!.humidity}%", "${data!.pressure}%", "${data!.feelsLike?.round()}"),
               ],
                );
             }

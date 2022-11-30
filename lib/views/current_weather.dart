@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget CurrentWeather(IconData icon, String temp, String location, String description) {
+Widget CurrentWeather(String iconCode, String temp, String location, String description) {
 
 
   return Center(
@@ -11,11 +11,8 @@ Widget CurrentWeather(IconData icon, String temp, String location, String descri
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
        children: [
-         Icon(
-             icon,
-             color: Colors.orange,
-           size: 64.0,
-         ),
+
+         Image.network("http://openweathermap.org/img/wn/$iconCode@2x.png"),
          SizedBox(height: 10.0,),
          Row(
            mainAxisAlignment: MainAxisAlignment.center,
@@ -50,8 +47,6 @@ Widget CurrentWeather(IconData icon, String temp, String location, String descri
                textStyle: TextStyle(fontSize: 18),
                fontWeight: FontWeight.w700
            ),
-
-
 
          ),
        ],

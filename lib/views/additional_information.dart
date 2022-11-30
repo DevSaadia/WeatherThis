@@ -7,8 +7,8 @@ TextStyle infoFont =
 const TextStyle(fontWeight: FontWeight.w400, fontSize: 18.0);
 
 Widget AdditionalInformation (
-
-    String wind,String humidity, String pressure, String feelsLike){
+    String wind,String humidity, String pressure, String feelsLike
+    ) {
   return Container(
     decoration: BoxDecoration(
       borderRadius:  BorderRadius.all(Radius.circular(20)),
@@ -74,7 +74,7 @@ Widget AdditionalInformation (
                 ),
                 const SizedBox(height:18.0),
                 Text(
-                  "$feelsLike",
+                  "${feelsLike}°C",
                   style: infoFont,
                 ),
               ],
