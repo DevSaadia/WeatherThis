@@ -1,13 +1,23 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_this/services/weather_api_client.dart';
 import 'package:weather_this/settings.dart';
+import 'model/weather_model.dart';
 import 'package:weather_this/views/additional_information.dart';
 import 'package:weather_this/views/current_weather.dart';
+Future<void> _firebaseMessagingBackgroundHandler(message) async {
+  await Firebase.initializeApp();
+  print('Handling a background message ${message.messageId}');
+}
 
 
-import 'model/weather_model.dart';
 
-void main(){
+
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget{
